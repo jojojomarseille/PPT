@@ -1,0 +1,49 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  adress: MyString
+  cp: MyString
+  ville: MyString
+  pays: MyString
+  mail: MyString
+  tel: MyString
+  user: MyString
+  mondaystart: 2023-11-10 03:51:44
+  mondayend: 2023-11-10 03:51:44
+  tuesdaystart: 2023-11-10 03:51:44
+  tuesdayend: 2023-11-10 03:51:44
+  wednesdaystart: 2023-11-10 03:51:44
+  wednesdayend: 2023-11-10 03:51:44
+  thursdaystart: 2023-11-10 03:51:44
+  thursdayend: 2023-11-10 03:51:44
+  fridaystart: 2023-11-10 03:51:44
+  fridayend: 2023-11-10 03:51:44
+  saturdaystart: 2023-11-10 03:51:44
+  saturdayend: 2023-11-10 03:51:44
+  sundaystart: 2023-11-10 03:51:44
+  sundayend: 2023-11-10 03:51:44
+
+two:
+  name: MyString
+  adress: MyString
+  cp: MyString
+  ville: MyString
+  pays: MyString
+  mail: MyString
+  tel: MyString
+  user: MyString
+  mondaystart: 2023-11-10 03:51:44
+  mondayend: 2023-11-10 03:51:44
+  tuesdaystart: 2023-11-10 03:51:44
+  tuesdayend: 2023-11-10 03:51:44
+  wednesdaystart: 2023-11-10 03:51:44
+  wednesdayend: 2023-11-10 03:51:44
+  thursdaystart: 2023-11-10 03:51:44
+  thursdayend: 2023-11-10 03:51:44
+  fridaystart: 2023-11-10 03:51:44
+  fridayend: 2023-11-10 03:51:44
+  saturdaystart: 2023-11-10 03:51:44
+  saturdayend: 2023-11-10 03:51:44
+  sundaystart: 2023-11-10 03:51:44
+  sundayend: 2023-11-10 03:51:44

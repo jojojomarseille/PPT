@@ -1,0 +1,2 @@
+class Piscine < ApplicationRecord
+end
