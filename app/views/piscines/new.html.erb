@@ -1,2 +1,96 @@
-<h1>Piscines#new</h1>
-<p>Find me in app/views/piscines/new.html.erb</p>
+
+
+<%= form_with(model: @piscine, url: piscines_path, local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div>
+    <%= form.label :adress %>
+    <%= form.text_field :adress %>
+  </div>
+  <div>
+    <%= form.label :cp %>
+    <%= form.text_field :cp %>
+  </div>
+  <div>
+    <%= form.label :ville %>
+    <%= form.text_field :ville %>
+  </div>
+  <div>
+    <%= form.label :pays %>
+    <%= form.text_field :pays %>
+  </div>
+  <div>
+    <%= form.label :mail %>
+    <%= form.text_field :mail %>
+  </div>
+  <div>
+    <%= form.label :tel %>
+    <%= form.text_field :tel %>
+  </div>
+  <div>
+    <%= form.label :user %>
+    <%= form.text_field :user, value: current_user, readonly: true %>
+  </div>
+
+  <div>
+    <%= form.label :mondaystarts %>
+    <%= form.time_field :mondaystart %>
+  </div>
+  <div>
+    <%= form.label :mondayend %>
+    <%= form.time_field :mondayend %>
+  </div>
+  <div>
+    <%= form.label :tuesdaystart %>
+    <%= form.time_field :tuesdaystart %>
+  </div>
+  <div>
+    <%= form.label :tuesdayend %>
+    <%= form.time_field :tuesdayend %>
+  </div>
+  <div>
+    <%= form.label :wednesdaystart %>
+    <%= form.time_field :wednesdaystart %>
+  </div>
+  <div>
+    <%= form.label :wednesdayend %>
+    <%= form.time_field :wednesdayend %>
+  </div>
+  <div>
+    <%= form.label :thursdaystart %>
+    <%= form.time_field :thursdaystart %>
+  </div>
+  <div>
+    <%= form.label :thursdayend %>
+    <%= form.time_field :thursdayend %>
+  </div>
+  <div>
+    <%= form.label :fridaystart %>
+    <%= form.time_field :fridaystart %>
+  </div>
+  <div>
+    <%= form.label :fridayend %>
+    <%= form.time_field :fridayend %>
+  </div>
+  <div>
+    <%= form.label :saturdaystart %>
+    <%= form.time_field :saturdaystart %>
+  </div>
+  <div>
+    <%= form.label :saturdayend %>
+    <%= form.time_field :saturdayend %>
+  </div>
+  <div>
+    <%= form.label :sundaystart %>
+    <%= form.time_field :sundaystart %>
+  </div>
+  <div>
+    <%= form.label :sundayend %>
+    <%= form.time_field :sundayend %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

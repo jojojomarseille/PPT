@@ -1,2 +1,86 @@
-<h1>Piscines#index</h1>
-<p>Find me in app/views/piscines/index.html.erb</p>
+
+
+<%# <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Your Logo</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav> %>
+
+    <section class="home">
+    </section>
+    <div style="height: 1000px">
+        <!-- just to make scrolling effect possible -->
+			<h2 class="myH2">What is this ?</h2>
+			<p class="myP">This is a responsive fixed navbar animated on scroll</p>
+			<p class="myP">I took inspiration from  ABDO STEIF (<a href="https://codepen.io/abdosteif/pen/bRoyMb?editors=1100">https://codepen.io/abdosteif/pen/bRoyMb?editors=1100</a>)
+			and Dicson <a href="https://codepen.io/dicson/pen/waKPgQ">(https://codepen.io/dicson/pen/waKPgQ)</a></p>
+			<p class="myP">I HOPE YOU FIND THIS USEFULL</p>
+			<p class="myP">Albi</p>
+
+      <div class="piscine-card">
+  <img src="app/assets/images/gettyimages-140872616-612x612.jpg" alt="Photo de la piscine" class="piscine-photo">
+  <div class="piscine-details">
+    <h2 class="piscine-titre">Nom de la piscine</h2>
+    <p class="piscine-adresse">Adresse de la piscine</p>
+    <h3 class="piscine-sous-titre">Horaires:</h3>
+    <ul class="piscine-horaires">
+      <li>Lundi: 9h00 - 18h00</li>
+      <li>Mardi: 9h00 - 18h00</li>
+      <li>Mercredi: 9h00 - 18h00</li>
+      <li>Jeudi: 9h00 - 18h00</li>
+      <li>Vendredi: 9h00 - 18h00</li>
+      <li>Samedi: 9h00 - 18h00</li>
+      <li>Dimanche: Fermé</li>
+    </ul>
+    <a href="chemin/vers/page-show.html" class="piscine-bouton">Voir plus</a>
+  </div>
+</div>
+
+				<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="..." class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Adresse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @piscines.each do |piscine| %>
+      <tr>
+        <td><%= piscine.name %></td>
+        <td><%= piscine.adress %> <%= piscine.cp %> <%= piscine.ville %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
