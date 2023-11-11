@@ -384,6 +384,12 @@ body {
 
 
 /* ----cartes de piscines------  */
+.grille-cartes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
 .piscine-bouton {
     display: inline-block;
     padding: 8px 16px;
@@ -409,16 +415,28 @@ body {
 
   .piscine-card {
     display: flex;
-    width: 25%;
+    width: 30%;
     margin-bottom: 10px;
-    margin-left: 20px;
+    margin: 20px;
     border: 1px solid black;
     border-radius: 15px;
     box-shadow: 8px 5px 5px grey;
   }
   
   .piscine-photo {
-    width: 150px;
+    height: 100%;
+  }
+
+  .piscine-photo img {
+    height: 100%;
+    width: 100%;
+    vertical-align:top;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .piscine-photo-bloc {
+    width: 50%;
   }
   
   .piscine-details {

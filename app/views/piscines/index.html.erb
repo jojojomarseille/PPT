@@ -4,7 +4,7 @@
     </section>
 
     <section >
-    <div style="height: 1000px">
+    <div style="height: 500px">
         <!-- just to make scrolling effect possible -->
 			<h2 class="myH2">What is this ?</h2>
 			<p class="myP">This is a responsive fixed navbar animated on scroll</p>
@@ -15,46 +15,33 @@
     </section>
 
     <section >
-      <div class="piscine-card">
-        <div class="piscine-photo-bloc">
-          <%# <img src="app/assets/images/gettyimages-140872616-612x612.jpg" alt="Photo de la piscine" class="piscine-photo"> %>
-          <div class="piscine-photo"> 
-            <%# <%= image_tag('gettyimages-140872616-612x612.jpg') %>
+      <div class="grille-cartes">
+        <% @piscines.each do |piscine| %>
+
+        <div class="piscine-card">
+          <div class="piscine-photo-bloc">
+            <div class="piscine-photo"> 
+              <%= image_tag('gettyimages-140872616-612x612.jpg')%>
+            </div>
           </div>
-        </div>
-        <div class="piscine-details">
-          <h2 class="piscine-titre">Nom de la piscine</h2>
-          <p class="piscine-adresse">Adresse de la piscine</p>
-          <h3 class="piscine-sous-titre">Horaires:</h3>
-          <ul class="piscine-horaires">
-            <li>Lundi: 9h00 - 18h00</li>
-            <li>Mardi: 9h00 - 18h00</li>
-            <li>Mercredi: 9h00 - 18h00</li>
-            <li>Jeudi: 9h00 - 18h00</li>
-            <li>Vendredi: 9h00 - 18h00</li>
-            <li>Samedi: 9h00 - 18h00</li>
-            <li>Dimanche: Fermé</li>
-          </ul>
-          <a href="chemin/vers/page-show.html" class="piscine-bouton">Voir plus</a>
-        </div>
+          <div class="piscine-details">
+            <h2 class="piscine-titre"><%= piscine.name %></h2>
+            <p class="piscine-adresse"><%= piscine.adress %> <%= piscine.cp %> <%= piscine.ville %></p>
+            <h3 class="piscine-sous-titre">Horaires:</h3>
+            <ul class="piscine-horaires">
+              <li>Lundi: <%=piscine.mondaystart%> - <%=piscine.mondayend%></li>
+              <li>Mardi: <%=piscine.tuesdaystart%> - <%=piscine.tuesdayend%></li>
+              <li>Mercredi: <%=piscine.wednesdaystart%> - <%=piscine.wednesdayend%></li>
+              <li>Jeudi: <%=piscine.thursdaystart%> - <%=piscine.thursdayend%></li>
+              <li>Vendredi: <%=piscine.fridaystart%> - <%=piscine.fridayend%></li>
+              <li>Samedi: <%=piscine.saturdaystart%> - <%=piscine.saturdayend%></li>
+              <li>Dimanche: <%=piscine.sundaystart%> - <%=piscine.sundayend%></li>
+            </ul>
+            <a href="piscines/<%=piscine.id%>" class="piscine-bouton">Voir plus</a>
+          </div>
+        </div>        
+        <%end%>
       </div>
     </section>
 
-		
 
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Adresse</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @piscines.each do |piscine| %>
-      <tr>
-        <td><%= piscine.name %></td>
-        <td><%= piscine.adress %> <%= piscine.cp %> <%= piscine.ville %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
