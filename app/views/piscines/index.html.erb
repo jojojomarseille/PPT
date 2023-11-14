@@ -17,6 +17,7 @@
     <section >
       <div class="grille-cartes">
         <% @piscines.each do |piscine| %>
+        <% horaires = piscine.format_heure_minutes %>
 
         <div class="piscine-card">
           <div class="piscine-photo-bloc">
@@ -26,18 +27,24 @@
           </div>
           <div class="piscine-details">
             <h2 class="piscine-titre"><%= piscine.name %></h2>
+            <%if piscine.tuesdaystart.nil? %>
+            <%=piscine.thursdayend%></li>
+            <% else%>
+               <%=horaires%></li>
+
+            <%end%>
             <p class="piscine-adresse"><%= piscine.adress %> <%= piscine.cp %> <%= piscine.ville %></p>
             <h3 class="piscine-sous-titre">Horaires:</h3>
             <ul class="piscine-horaires">
-              <li>Lundi: <%=piscine.mondaystart%> - <%=piscine.mondayend%></li>
-              <li>Mardi: <%=piscine.tuesdaystart%> - <%=piscine.tuesdayend%></li>
-              <li>Mercredi: <%=piscine.wednesdaystart%> - <%=piscine.wednesdayend%></li>
-              <li>Jeudi: <%=piscine.thursdaystart%> - <%=piscine.thursdayend%></li>
-              <li>Vendredi: <%=piscine.fridaystart%> - <%=piscine.fridayend%></li>
-              <li>Samedi: <%=piscine.saturdaystart%> - <%=piscine.saturdayend%></li>
-              <li>Dimanche: <%=piscine.sundaystart%> - <%=piscine.sundayend%></li>
+              <li>Lundi: <%=horaires[0]%> - <%=horaires[1]%></li>
+              <li>Mardi: <%=horaires[2]%> - <%=horaires[3]%></li>
+              <li>Mercredi: <%=horaires[4]%> - <%=horaires[5]%></li>
+              <li>Jeudi: <%=horaires[6]%> - <%=horaires[7]%></li>
+              <li>Vendredi: <%=horaires[8]%> - <%=horaires[9]%></li>
+              <li>Samedi: <%=horaires[10]%> - <%=horaires[11]%></li>
+              <li>Dimanche: <%=horaires[12]%> - <%=horaires[13]%></li>
             </ul>
-            <a href="piscines/<%=piscine.id%>" class="piscine-bouton">Detail</a>
+            <a href="piscines/<%=piscine.id%>" class="piscine-bouton">Detailg</a>
           </div>
         </div>        
         <%end%>

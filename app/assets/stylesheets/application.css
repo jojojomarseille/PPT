@@ -418,13 +418,49 @@ body {
     width: 30%;
     margin-bottom: 10px;
     margin: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 15px;
     box-shadow: 8px 5px 5px grey;
   }
   
   .piscine-photo {
     height: 100%;
+  }
+
+  .top-space {
+    height: 90px;
+  }
+
+  .log-box {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+  }
+
+  .log-title {
+    text-align: center;
+  }
+
+  .log-box input[type="email"],
+  input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+  }
+
+  .log-btn{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
   .piscine-photo img {

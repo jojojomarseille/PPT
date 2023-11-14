@@ -5,6 +5,7 @@ class PiscinesController < ApplicationController
 
   def index
     @piscines = Piscine.all
+    
   end
 
   def create
