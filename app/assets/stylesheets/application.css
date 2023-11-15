@@ -358,10 +358,6 @@ body {
 }
 
 
-
-
-
-
 .myH2 {
 	text-align:center;
 	font-size: 4rem;
@@ -398,6 +394,9 @@ body {
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s;
+    width: 80%;
+    text-align: center;
+
   }
   
   .piscine-bouton:hover {
@@ -431,6 +430,57 @@ body {
     height: 90px;
   }
 
+  .piscine-photo img {
+    height: 100%;
+    width: 100%;
+    vertical-align:top;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .piscine-photo-bloc {
+    width: 50%;
+  }
+  
+  .piscine-details {
+    flex-grow: 1;
+    padding: 10px;
+  }
+  
+  .piscine-titre {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .piscine-adresse,
+  .piscine-horaires {
+    font-size: 16px;
+  }
+
+  /* ----form creation piscines------  */
+
+  .piscine-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+  }
+
+  .piscine-form h2 {
+    text-align: center;
+  }
+
+  .piscine-field {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+  }
+
+  /* ----form sign in log in------  */
+
   .log-box {
     max-width: 400px;
     margin: auto;
@@ -463,29 +513,14 @@ body {
     cursor: pointer;
   }
 
-  .piscine-photo img {
-    height: 100%;
-    width: 100%;
-    vertical-align:top;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-  }
 
-  .piscine-photo-bloc {
-    width: 50%;
-  }
-  
-  .piscine-details {
-    flex-grow: 1;
-    padding: 10px;
-  }
-  
-  .piscine-titre {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .piscine-adresse,
-  .piscine-horaires {
-    font-size: 16px;
+  /* ----piscine show------  */
+  .piscine-show-card {
+    display: flex;
+    width: 70%;
+    margin-bottom: 10px;
+    margin: auto;
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    box-shadow: 8px 5px 5px grey;
   }

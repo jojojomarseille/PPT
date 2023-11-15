@@ -1,5 +1,25 @@
 <div class="top-space">
 </div>
 
-<h1>Piscines#show</h1>
-<p>Find me in app/views/piscines/show.html.erb</p>
+<div class="piscine-show-card">
+    <% horaires = @piscine.format_heure_minutes %>
+        <div class="piscine-photo-bloc">
+            <div class="piscine-photo"> 
+                <%= image_tag('gettyimages-140872616-612x612.jpg')%>
+            </div>
+        </div>
+        <div class="piscine-details">
+            <h2 class="piscine-titre"><%= @piscine.name %></h2>
+            <p class="piscine-adresse"><%= @piscine.adress %> <%= @piscine.cp %> <%= @piscine.ville %></p>
+            <h3 class="piscine-sous-titre">Horaires:</h3>
+            <ul class="piscine-horaires">
+                <li>Lundi: <%=horaires[0]%> - <%=horaires[1]%></li>
+                <li>Mardi: <%=horaires[2]%> - <%=horaires[3]%></li>
+                <li>Mercredi: <%=horaires[4]%> - <%=horaires[5]%></li>
+                <li>Jeudi: <%=horaires[6]%> - <%=horaires[7]%></li>
+                <li>Vendredi: <%=horaires[8]%> - <%=horaires[9]%></li>
+                <li>Samedi: <%=horaires[10]%> - <%=horaires[11]%></li>
+                <li>Dimanche: <%=horaires[12]%> - <%=horaires[13]%></li>
+            </ul>
+        </div>
+</div>        

@@ -22,7 +22,7 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li> %>
                     <% if user_signed_in? %>
-                      <li><a href="#">Logged in as <%= current_user.email %></a> </li>
+                      <li><a href="/piscines/index_perso">Logged in as <%= current_user.email %></a> </li>
                       <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                       <li><%= link_to "Ajouter une piscine", new_piscine_path %></li>
                     <% else %>

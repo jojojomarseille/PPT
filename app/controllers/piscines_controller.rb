@@ -1,11 +1,17 @@
 class PiscinesController < ApplicationController
+  include Pagy::Backend
+
   def show
     @piscine = Piscine.find(params[:id])
   end
 
   def index
-    @piscines = Piscine.all
-    
+    # @piscines = Piscine.all
+    @pagy, @piscines = pagy(Piscine.all)
+  end
+
+  def index_perso
+    @pagy, @piscines = pagy(Piscine.where(user: current_user))
   end
 
   def create

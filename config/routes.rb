@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "piscines#index"
 
   # get 'piscines/show'
-  # get 'piscines/index'
+  get 'piscines/index_perso'
   # get 'piscines/create'
   # get 'piscines/new'
   # get 'users/show'

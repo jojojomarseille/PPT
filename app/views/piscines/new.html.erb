@@ -1,97 +1,107 @@
 <div class="top-space">
 </div>
 
+<div class="piscine-form">
+  <h2>Ajouter une piscine </h2>
 <%= form_with(model: @piscine, url: piscines_path, local: true) do |form| %>
   <div>
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "piscine-field" %>
   </div>
   
   <div>
     <%= form.label :adress %>
-    <%= form.text_field :adress %>
+    <%= form.text_field :adress, class: "piscine-field" %>
   </div>
   <div>
     <%= form.label :cp %>
-    <%= form.text_field :cp %>
+    <%= form.text_field :cp, class: "piscine-field" %>
   </div>
   <div>
     <%= form.label :ville %>
-    <%= form.text_field :ville %>
+    <%= form.text_field :ville, class: "piscine-field" %>
   </div>
   <div>
     <%= form.label :pays %>
-    <%= form.text_field :pays %>
+    <%= form.text_field :pays, class: "piscine-field" %>
   </div>
   <div>
     <%= form.label :mail %>
-    <%= form.text_field :mail %>
+    <%= form.text_field :mail, class: "piscine-field" %>
   </div>
   <div>
     <%= form.label :tel %>
-    <%= form.text_field :tel %>
+    <%= form.text_field :tel, class: "piscine-field" %>
   </div>
   <div>
     <%= form.label :user %>
-    <%= form.text_field :user, value: current_user, readonly: true %>
+    <%= form.text_field :user, value: current_user.id, readonly: true, class: "piscine-field", style: 'display:none'%>
   </div>
 
   <div>
-    <%= form.label :mondaystarts %>
-    <%= form.time_field :mondaystart %>
+    <p>Lundi:
+    <%= form.label "Ouverture" %>
+    <%= form.time_field :mondaystart, class: "piscine-time-field" %>
+  
+    <%= form.label "fermeture" %>
+    <%= form.time_field :mondayend, class: "piscine-time-field" %>
+    </p>
   </div>
   <div>
-    <%= form.label :mondayend %>
-    <%= form.time_field :mondayend %>
+    <p>Mardi: 
+    <%= form.label "Ouverture" %>
+    <%= form.time_field :tuesdaystart, class: "piscine-time-field" %>
+  
+    <%= form.label "Fermeture"%>
+    <%= form.time_field :tuesdayend, class: "piscine-time-field" %>
+    </p>
   </div>
   <div>
-    <%= form.label :tuesdaystart %>
-    <%= form.time_field :tuesdaystart %>
+    <p>Mercredi:
+    <%= form.label "Ouverture" %>
+    <%= form.time_field :wednesdaystart, class: "piscine-time-field" %>
+ 
+    <%= form.label "Fermeture" %>
+    <%= form.time_field :wednesdayend, class: "piscine-time-field" %>
+    </p>
   </div>
   <div>
-    <%= form.label :tuesdayend %>
-    <%= form.time_field :tuesdayend %>
+    <p>Jeudi:
+    <%= form.label "Ouverture" %>
+    <%= form.time_field :thursdaystart, class: "piscine-time-field" %>
+  
+    <%= form.label "Fermeture" %>
+    <%= form.time_field :thursdayend, class: "piscine-time-field" %>
+    </p>
   </div>
   <div>
-    <%= form.label :wednesdaystart %>
-    <%= form.time_field :wednesdaystart %>
+    <p>Vendredi:
+    <%= form.label "Ouverture" %>
+    <%= form.time_field :fridaystart, class: "piscine-time-field" %>
+  
+    <%= form.label "Fermeture" %>
+    <%= form.time_field :fridayend, class: "piscine-time-field" %>
+    </p>
   </div>
   <div>
-    <%= form.label :wednesdayend %>
-    <%= form.time_field :wednesdayend %>
+    <p>Samedi:
+    <%= form.label "Ouverture" %>
+    <%= form.time_field :saturdaystart, class: "piscine-time-field" %>
+  
+    <%= form.label "Fermeture" %>
+    <%= form.time_field :saturdayend, class: "piscine-time-field" %>
+    </p>
   </div>
   <div>
-    <%= form.label :thursdaystart %>
-    <%= form.time_field :thursdaystart %>
-  </div>
-  <div>
-    <%= form.label :thursdayend %>
-    <%= form.time_field :thursdayend %>
-  </div>
-  <div>
-    <%= form.label :fridaystart %>
-    <%= form.time_field :fridaystart %>
-  </div>
-  <div>
-    <%= form.label :fridayend %>
-    <%= form.time_field :fridayend %>
-  </div>
-  <div>
-    <%= form.label :saturdaystart %>
-    <%= form.time_field :saturdaystart %>
-  </div>
-  <div>
-    <%= form.label :saturdayend %>
-    <%= form.time_field :saturdayend %>
-  </div>
-  <div>
-    <%= form.label :sundaystart %>
-    <%= form.time_field :sundaystart %>
-  </div>
-  <div>
-    <%= form.label :sundayend %>
-    <%= form.time_field :sundayend %>
+    <p>Dimanche:
+    <%= form.label "Ouverture" %>
+    <%= form.time_field :sundaystart, class: "piscine-time-field" %>
+ 
+    <%= form.label "fermeture" %>
+    <%= form.time_field :sundayend, class: "piscine-time-field" %>
+    </p>
   </div>
 
-  <%= form.submit %>
+  <%= form.submit "Créer", class: "log-btn" %>
 <% end %>
+</div>
