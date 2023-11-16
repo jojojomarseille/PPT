@@ -14,17 +14,18 @@ class PiscinesController < ApplicationController
     @pagy, @piscines = pagy(Piscine.where(user: current_user))
   end
 
-  def create
-    @piscine = Piscine.new(piscine_params)
-    if @piscine.save
-      redirect_to @piscine
-    else
-      render 'new'
-    end
+  def new
+    @piscine = current_user.piscines.build
   end
 
-  def new
-    @piscine = Piscine.new
+  def create
+    @piscine = current_user.piscines.build(piscine_params)
+  
+    if @piscine.save
+      redirect_to @piscine, notice: 'Piscine créée avec succès.'
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -43,40 +44,49 @@ class PiscinesController < ApplicationController
     end
 end
 
-# def edit
-#   question = McQuestion.find(params[:id])
-#   respond_to do |format|
-#       format.html { render :edit, locals: { question: question } }
-#   end
-# end
+def edit
+  @piscine = Piscine.find(params[:id])
+  respond_to do |format|
+      format.html { render :edit, locals: { piscine: @piscine } }
+  end
+end
 
 # def update
 #   # load existing object again from URL param
-#   question = McQuestion.find(params[:id])
+#   @piscine = Piscine.find(params[:id])
 #   # respond_to block
 #   respond_to do |format|
 #       format.html do
-#           if question.update(params.require(:mc_question).permit(:question, :answer, :distractor_1, :distractor_2))
+#           if @piscine.update(params.require(:piscine).permit(:name, :adress, :cp, :ville, :pays, :mail, :tel, :user, :mondaystart, :mondayend, :tuesdaystart, :tuesdayend, :wednesdaystart, :wednesdayend, :thursdaystart, :thursdayend, :fridaystart, :fridayend, :saturdaystart, :saturdayend, :sundaystart, :sundayend))
 #               # success message
-#               flash[:success] = 'Question updated successfully'
+#               flash[:success] = 'Piscine updated successfully'
 #               # redirect to index
-#               redirect_to quiz_url(question.quiz)
+#               redirect_to root_path
 #           else
 #               # error message
-#               flash.now[:error] = 'Error: Question could not be updated'
+#               flash.now[:error] = 'Error: Piscine could not be updated'
 #               # render edit
-#               render :edit, locals: { question: question }
+#               render :edit, locals: { piscine: @piscine }
 #           end
 #       end
 #   end
 # end
 
+def update
+  @piscine = Piscine.find(params[:id])
 
+  if @piscine.update(piscine_params)
+    redirect_to @piscine
+  else
+    flash.now[:error] = 'Error: Piscine could not be updated'
+    render 'edit'
+  end
+end
 
 
 private
  
   def piscine_params
-    params.require(:piscine).permit(:name, :adress, :cp, :ville, :pays, :mail, :tel, :user, :mondaystart, :mondayend, :tuesdaystart, :tuesdayend, :wednesdaystart, :wednesdayend, :thursdaystart, :thursdayend, :fridaystart, :fridayend, :saturdaystart, :saturdayend, :sundaystart, :sundayend)
+    params.require(:piscine).permit(:name, :adress, :cp, :ville, :pays, :mail, :tel, :mondaystart, :mondayend, :tuesdaystart, :tuesdayend, :wednesdaystart, :wednesdayend, :thursdaystart, :thursdayend, :fridaystart, :fridayend, :saturdaystart, :saturdayend, :sundaystart, :sundayend)
   end
 end

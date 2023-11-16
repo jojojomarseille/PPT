@@ -1,4 +1,5 @@
 class Piscine < ApplicationRecord
+  belongs_to :user
 
     def format_heure_minutes
         formatted_fields = []

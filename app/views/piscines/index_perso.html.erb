@@ -26,10 +26,11 @@
               <li>Samedi: <%=horaires[10]%> - <%=horaires[11]%></li>
               <li>Dimanche: <%=horaires[12]%> - <%=horaires[13]%></li>
             </ul>
-            <a href="piscines/<%=piscine.id%>" class="piscine-bouton">Detail</a>
-            <%= link_to '🗑', piscine_path(piscine), method: :delete %>
+            <a href="./<%=piscine.id%>" class="piscine-bouton">Detail</a>
             <%= button_to "delete", {:controller => :piscines,
       :action => 'destroy', :id => piscine.id }, :method => :delete %>
+            <%= button_to "update", {:controller => :piscines,
+      :action => 'edit', :id => piscine.id }, :method => :get %>
           </div>
         </div>        
         <%end%>

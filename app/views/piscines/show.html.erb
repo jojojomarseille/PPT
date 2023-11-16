@@ -21,5 +21,12 @@
                 <li>Samedi: <%=horaires[10]%> - <%=horaires[11]%></li>
                 <li>Dimanche: <%=horaires[12]%> - <%=horaires[13]%></li>
             </ul>
+            <p>current_user : <%= current_user.id %></p>
+            <p> piscine user: <%= @piscine.user.id %> </p>
+             <%if @piscine.user.id == current_user.id%> 
+                <%= button_to "delete", {:controller => :piscines, :action => 'destroy', :id => @piscine.id }, :method => :delete %>
+                <%= button_to "update", {:controller => :piscines, :action => 'edit', :id => @piscine.id }, :method => :get %>
+             <%else%>
+            <%end%> 
         </div>
 </div>        

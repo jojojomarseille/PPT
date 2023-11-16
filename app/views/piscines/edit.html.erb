@@ -1,0 +1,110 @@
+<div class="top-space">
+</div>
+
+<div class="piscine-form">
+  <h2>Modifier une piscine </h2>
+<%= form_for @piscine do |f| %>
+  <% if @piscine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@piscine.errors.count, "erreur") %> a interdit l'enregistrement de cette piscine :</h2>
+
+      <ul>
+      <% @piscine.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Nom" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :adress, "Adresse" %>
+    <%= f.text_field :adress %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cp, "Code Postal" %>
+    <%= f.text_field :cp %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ville, "Ville" %>
+    <%= f.text_field :ville %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pays, "Pays" %>
+    <%= f.text_field :pays %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mail, "Email" %>
+    <%= f.text_field :mail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tel, "Téléphone" %>
+    <%= f.text_field :tel %>
+  </div>
+
+  <!-- Les horaires par jour -->
+  <div class="field">
+    <%= f.label :mondaystart, "Lundi début" %>
+    <%= f.time_select :mondaystart %>
+    <%= f.label :mondayend, "fin" %>
+    <%= f.time_select :mondayend %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tuesdaystart, "Mardi début" %>
+    <%= f.time_select :tuesdaystart %>
+    <%= f.label :tuesdayend, "fin" %>
+    <%= f.time_select :tuesdayend %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wednesdaystart, "Mercredi début" %>
+    <%= f.time_select :wednesdaystart %>
+    <%= f.label :wednesdayend, "fin" %>
+    <%= f.time_select :wednesdayend %>
+  </div>
+
+  <div class="field">
+    <%= f.label :thursdaystart, "Jeudi début" %>
+    <%= f.time_select :thursdaystart %>
+    <%= f.label :thursdayend, "fin" %>
+    <%= f.time_select :thursdayend %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fridaystart, "Vendredi début" %>
+    <%= f.time_select :fridaystart %>
+    <%= f.label :fridayend, "fin" %>
+    <%= f.time_select :fridayend %>
+  </div>
+
+  <div class="field">
+    <%= f.label :saturdaystart, "Samedi début" %>
+    <%= f.time_select :saturdaystart %>
+    <%= f.label :saturdayend, "fin" %>
+    <%= f.time_select :saturdayend %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sundaystart, "Dimanche début" %>
+    <%= f.time_select :sundaystart %>
+    <%= f.label :sundayend, "fin" %>
+    <%= f.time_select :sundayend %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Enregistrer les modifications" %>
+  </div>
+
+<% end %>
+
+</div>
