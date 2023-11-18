@@ -87,6 +87,6 @@ end
 private
  
   def piscine_params
-    params.require(:piscine).permit(:name, :adress, :cp, :ville, :pays, :mail, :tel, :mondaystart, :mondayend, :tuesdaystart, :tuesdayend, :wednesdaystart, :wednesdayend, :thursdaystart, :thursdayend, :fridaystart, :fridayend, :saturdaystart, :saturdayend, :sundaystart, :sundayend)
+    params.require(:piscine).permit(:name, :adress, :cp, :ville, :pays, :mail, :tel, :mondaystart, :mondayend, :tuesdaystart, :tuesdayend, :wednesdaystart, :wednesdayend, :thursdaystart, :thursdayend, :fridaystart, :fridayend, :saturdaystart, :saturdayend, :sundaystart, :sundayend, :image)
   end
 end

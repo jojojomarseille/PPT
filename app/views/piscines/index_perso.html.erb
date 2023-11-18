@@ -10,7 +10,7 @@
         <div class="piscine-card">
           <div class="piscine-photo-bloc">
             <div class="piscine-photo"> 
-              <%= image_tag('gettyimages-140872616-612x612.jpg')%>
+              <%= image_tag url_for(piscine.image) if piscine.image.attached? %>
             </div>
           </div>
           <div class="piscine-details">

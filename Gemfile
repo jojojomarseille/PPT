@@ -44,6 +44,11 @@ gem "bootsnap", require: false
 
 gem 'jquery-rails'
 gem 'pagy'
+gem 'activeadmin'
+gem 'sassc-rails'
+gem "image_processing", ">= 1.2"
+
+
 
 gem 'devise'
 
