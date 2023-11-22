@@ -14,11 +14,11 @@ class Piscine < ApplicationRecord
       formatted_fields
     end
 
-    def self.ransackable_attributes(auth_object = nil)
-      ["adress", "cp", "created_at", "fridayend", "fridaystart", "id", "mail", "mondayend", "mondaystart", "name", "pays", "saturdayend", "saturdaystart", "sundayend", "sundaystart", "tel", "thursdayend", "thursdaystart", "tuesdayend", "tuesdaystart", "updated_at", "user_id", "ville", "wednesdayend", "wednesdaystart"]
-    end
-    def self.ransackable_associations(auth_object = nil)
-      ["image_attachment", "image_blob", "user"]
-    end
+    # def self.ransackable_attributes(auth_object = nil)
+    #   ["adress", "cp", "created_at", "fridayend", "fridaystart", "id", "mail", "mondayend", "mondaystart", "name", "pays", "saturdayend", "saturdaystart", "sundayend", "sundaystart", "tel", "thursdayend", "thursdaystart", "tuesdayend", "tuesdaystart", "updated_at", "user_id", "ville", "wednesdayend", "wednesdaystart"]
+    # end
+    # def self.ransackable_associations(auth_object = nil)
+    #   ["image_attachment", "image_blob", "user"]
+    # end
 
 end
