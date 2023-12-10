@@ -42,12 +42,25 @@ class PiscinesController < ApplicationController
             redirect_to root_path
         end
     end
-end
+  end
 
 def edit
   @piscine = Piscine.find(params[:id])
   respond_to do |format|
       format.html { render :edit, locals: { piscine: @piscine } }
+  end
+end
+
+def filter
+  @piscines = Piscine.filter(params[:query])
+
+  respond_to do |format|
+    format.turbo_stream do
+      render turbo_stream: turbo_stream.replace(
+        "piscines_frame",
+        partial: "piscines/list", locals: { piscines: @piscines }
+      )
+    end
   end
 end
 
