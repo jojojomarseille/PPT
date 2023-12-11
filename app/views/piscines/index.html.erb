@@ -25,9 +25,8 @@
         <turbo-frame id="piscines_frame">
         <% @piscines.each do |piscine| %>
       
-        <% horaires = piscine.format_heure_minutes %>
-        <%= render partial: "piscine", locals: { piscine: piscine } %>
-        
+        <%= render partial: "list", locals: { piscine: piscine } %>
+        <%end%>
        </turbo-frame>
       </div>
        <%= pagy_bootstrap_nav(@pagy).html_safe %>
