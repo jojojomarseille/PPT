@@ -11,6 +11,16 @@
 			<%# <p class="myP">I took inspiration from  ABDO STEIF (<a href="https://codepen.io/abdosteif/pen/bRoyMb?editors=1100">https://codepen.io/abdosteif/pen/bRoyMb?editors=1100</a>)
 			and Dicson <a href="https://codepen.io/dicson/pen/waKPgQ">(https://codepen.io/dicson/pen/waKPgQ)</a></p> %>
 			<p class="myP">Deja plus de <%=@piscines.count%> piscines ajoutées! Trouve la tienne!</p>
+      <!-- Bouton pour ouvrir la modale -->
+        <button id="openModalButton">Ouvrir le chat</button>
+
+      <!-- Structure de base pour la modale -->
+          <div id="chatModal" class="modal" style="display:none;">
+            <div class="modal-content">
+              <span id="closeModalButton" class="close">&times;</span>
+                <p>Ici, le contenu de la modale pour le chat avec GPT.</p>
+            </div>
+          </div>
 			<%# <p class="myP">Albi</p> %>
     </section>
 
