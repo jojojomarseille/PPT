@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const closeModalButton = document.getElementById('closeModalButton');
   
     openModalButton.addEventListener('click', () => {
+      console.log("Bouton d'ouverture de la modale cliqué3");
       modal.style.display = 'block';
     });
   

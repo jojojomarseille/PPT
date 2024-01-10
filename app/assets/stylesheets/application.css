@@ -527,38 +527,92 @@ body {
 
 
   /* Style basique pour la modale de la page index*/
-.modal {
+  .modal {
+    display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
+    z-index: 1000;
+    left: 0; 
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4); /* L'arrière-plan noir avec opacité */
+    background-color: rgba(0, 0, 0, 0.4); 
   }
   
-  /* Contenu de modale */
   .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: auto; /* Positionnement au centre horizontalement et verticalement */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 100px; /* Largeur spécifiée */
+    height: 200px; /* Hauteur spécifiée */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
-  /* Le bouton "x" pour fermer la modale */
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
   .close {
-    color: #aaa;
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
   }
   
   .close:hover,
   .close:focus {
-    color: black;
+    color: #000;
     text-decoration: none;
     cursor: pointer;
   }
+  
+  .modal-body {
+    padding: 2px 16px;
+    overflow-y: auto;
+    height: 200px; /* Taille fixe pour la zone de chat */
+  }
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    text-align: right;
+  }
+  
+  #messageInput {
+    width: 85%;
+    padding: 10px;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Pour inclure padding dans la largeur */
+  }
+  
+  #sendMessage {
+    padding: 10px;
+    background-color: #4CAF50; /* Vert */
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  #sendMessage:hover {
+    background-color: #45a049;
+  }
+  
+  .messages {
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse; /* Les nouveaux messages apparaissent en bas */
+  }
+  

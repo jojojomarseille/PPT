@@ -17,8 +17,21 @@
       <!-- Structure de base pour la modale -->
           <div id="chatModal" class="modal" style="display:none;">
             <div class="modal-content">
-              <span id="closeModalButton" class="close">&times;</span>
-                <p>Ici, le contenu de la modale pour le chat avec GPT.</p>
+                <div class="modal-header">
+                  <span id="closeModalButton" class="close">&times;</span>
+                  <h2>Chat</h2>
+                </div>
+                <!-- Corps de la modale : historique des messages -->
+                <div class="modal-body">
+                  <div class="messages">
+                    <!-- Les messages seront ajoutés ici dynamiquement -->
+                  </div>
+                </div>
+                <!-- Pied de page de la modale : zone de saisie des messages -->
+                <div class="modal-footer">
+                  <input type="text" id="messageInput" placeholder="Écrire un message...">
+                  <button id="sendMessage">Envoyer</button>
+                </div>
             </div>
           </div>
 			<%# <p class="myP">Albi</p> %>
@@ -41,5 +54,28 @@
       </div>
        <%= pagy_bootstrap_nav(@pagy).html_safe %>
     </section>
+
+    <%# <script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const openModalButton = document.getElementById('openModalButton');
+    const modal = document.getElementById('chatModal');
+    const closeModalButton = document.getElementById('closeModalButton');
+  
+    openModalButton.addEventListener('click', () => {
+      console.log("Bouton d'ouverture de la modale cliqué1");
+      modal.style.display = 'block';
+    });
+  
+    closeModalButton.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  
+    window.addEventListener('click', (event) => {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+</script> %>
 
 

@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
 
   </head>
 
@@ -39,12 +39,12 @@
     <%= yield %>
   </body>
   <!-- Jquery needed -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <%# <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> %>
     
     <%# <script src="js/scripts.js"></script> %>
 
 <!-- Function used to shrink nav bar removing paddings and adding black background -->
-    <script>
+    <%# <script>
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
                 $('.nav').addClass('affix');
@@ -53,5 +53,5 @@
                 $('.nav').removeClass('affix');
             }
         });
-    </script>
+    </script> %>
 </html>
